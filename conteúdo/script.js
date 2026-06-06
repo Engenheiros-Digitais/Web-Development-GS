@@ -40,7 +40,13 @@ function mudarSlide(direcao) {
 // coloca a legenda da primeira imagem quando a página abre
 document.getElementById('legenda-slide').textContent = imagens[0].legenda;
 
-
+//função para verificar se o usuario preencheu todos os  dados//
+function validarFormulario() {
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+const erro = document.getElementById('erro-form');
+}
 
 
 
