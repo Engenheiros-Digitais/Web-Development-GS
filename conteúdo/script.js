@@ -58,7 +58,10 @@ if (nome === "" || email === "" || mensagem === "") {
 erro.style.display = 'none';
 alert("Mensagem enviada com sucesso! Obrigado pelo contato.");
 
-
+//Limpa os campos depois do envio//
+document.getElementById('nome').value = '';
+document.getElementById('email').value = '';
+document.getElementById('mensagem').value = '';
 
 
 
