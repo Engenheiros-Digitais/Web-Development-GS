@@ -48,7 +48,15 @@ function validarFormulario() {
 const erro = document.getElementById('erro-form');
 }
 
+//Validação e mensagem de erro//
+if (nome === "" || email === "" || mensagem === "") {
+    erro.style.display = 'block';
+    return;
+}
 
+//se tudo estiver preenchido//
+erro.style.display = 'none';
+alert("Mensagem enviada com sucesso! Obrigado pelo contato.");
 
 
 
