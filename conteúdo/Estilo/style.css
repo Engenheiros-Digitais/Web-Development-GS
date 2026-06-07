@@ -350,6 +350,7 @@ h1 {
     color: var(--color-almost-White);
     padding: 160px;
     min-height: 90vh;
+    
 }
 
 .sec4-container {
@@ -391,8 +392,8 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: var(--spacing-sm);
-    width: 80%;
-    max-width: 450px;
+    width: 800px;
+ 
     margin-left: 150px;
 }
 
@@ -477,91 +478,67 @@ h1 {
    SEÇÃO 6 — APLICAÇÃO NO DIA A DIA
    ============================================================ */
 
-#sec-6 {
-    min-height: 100vh;
-    background-image: url(../Imagens/fundo-sec6.jpeg);
-    padding: 100px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    text-align: center;
+
+#sec-6{
+    min-height:100vh;
+    padding:120px 10%;
+    text-align:center;
+    background-image: url(/conteúdo/imagens/fundo-sec6.avif);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
-#sec-6 h2 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 30px;
+#sec-6 h2{
+    color:#fff;
+    font-size:3rem;
+    line-height:1.1;
 }
 
-#sec-6 h2::after {
-    content: "";
-    display: block;
-    width: 120px;
-    height: 4px;
-    margin: 20px auto 0;
-    background: #ff5c33;
-    border-radius: 10px;
+.linha{
+    width:120px;
+    height:4px;
+    background:#ff5c33;
+    border-radius:999px;
+    margin:25px 0 40px;
 }
 
-.descricao {
-    max-width: 900px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 80px;
+#sec-6 > p{
+    max-width:700px;
+    color:rgba(255,255,255,.8);
+    margin-bottom:10px;
 }
 
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    width: 100%;
+.cards{
+    display:flex;
+    gap:30px;
+    margin-top:60px;
 }
 
-.card {
-    width: 350px;
-    padding: 40px 30px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    transition: 0.3s ease;
+.card{
+    width:300px;
+    padding:35px 25px;
+
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #ff7e33;
+.icone{
+    font-size:3rem;
+    margin-bottom:15px;
 }
 
-.icone {
-    font-size: 4rem;
-    color: #ff5c33;
-    margin-bottom: 25px;
+.card h3{
+    color:#fff;
+    margin-bottom:10px;
 }
 
-.card h3 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+.card p{
+    color:rgba(255,255,255,.75);
 }
-
-.card h3::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #627265;
-    margin: 15px auto;
-    border-radius: 10px;
-}
-
-.card p {
-    line-height: 1.8;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
 
 /* ============================================================
    RODAPÉ
