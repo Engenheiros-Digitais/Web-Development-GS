@@ -85,6 +85,17 @@ function mostrarResultado(){
 
 }
 
+function reiniciarQuiz(){
+    iniciarQuiz();
+
+
+}
+
+iniciarQuiz();
+
+
+
+
 
 
 
