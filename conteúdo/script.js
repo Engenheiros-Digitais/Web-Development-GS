@@ -90,13 +90,9 @@ function reiniciarQuiz(){
     iniciarQuiz();
 
 
-
-
-
-
 }
 
-
+iniciarQuiz();
 
 
 
