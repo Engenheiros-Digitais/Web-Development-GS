@@ -64,6 +64,20 @@ document.getElementById('email').value = '';
 document.getElementById('mensagem').value = '';
 
 
+function proximaPergunta(){
+    perguntaAtual++;
+
+    if (perguntaAtual >= perguntas.lenght) {
+        mostrarResultado();
+
+    } else {
+        mostrarPergunta();
+    }
+
+
+}
+
+
 
 
 
