@@ -78,7 +78,23 @@ function proximaPergunta(){
 }
 
 
+function mostrarResultado(){
+    document.getElementById('pergunta-container').style.display = 'none';
+    document.getElementById('btn-proximo').style.display = 'none';
+    document.getElementById('resultado-quiz').style.display = 'block';
+    document.getElementById('texto-resultado').textContent = 'Você acertou' + pontuacao + 'de' + perguntas.lenght + 'perguntas!';
 
+}
+
+function reiniciarQuiz(){
+    iniciarQuiz();
+
+
+
+
+
+
+}
 
 
 
