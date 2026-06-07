@@ -1,0 +1,978 @@
+/* ============================================================
+   FIREWATCH — style.css
+   Web Development — Global Solution 2026 — FIAP
+   ============================================================ */
+
+
+/* ============================================================
+   FONTES LOCAIS
+   ============================================================ */
+
+@font-face {
+    font-family: Lato;
+    src: url(../Fontes/Lato-Regular.woff2);
+}
+
+@font-face {
+    font-family: Oswald;
+    src: url(../Fontes/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../Fontes/Roboto-VariableFont_wdth,wght.ttf);
+    font-weight: 300;
+}
+
+
+/* ============================================================
+   VARIÁVEIS CSS
+   ============================================================ */
+
+:root {
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --color-almost-White: #FFFFFD;
+    --color-yellow: #CCC23E;
+    --color-fire: #ff5c33;
+    --color-navy-Blue: #10206E;
+    --color-forest-green: #265C00;
+    --color-dark-green: #020E02;
+    --color-dark-gray: #010102;
+    --color-red: #E63946;
+}
+
+
+/* ============================================================
+   RESET CSS
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.logofiap {
+    position: absolute;
+    left: 50px;
+    top: -11px;
+    width: 130px;
+}
+
+.header-Sec {
+    background-image: url(../Imagens/Satelite-inicio-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-sm);
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--color-almost-White);
+    text-align: center;
+    letter-spacing: 4px;
+    line-height: 1;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9),
+                 0px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.subtitulo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-almost-White);
+    text-shadow: 0px 0px 40px rgba(255, 255, 255, 0.6),
+                 0px 0px 10px rgba(255, 255, 255, 0.4),
+                 0px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.sec-menu {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sec-lista {
+    display: flex;
+    gap: var(--spacing-md);
+    list-style: none;
+}
+
+.item-menu {
+    text-decoration: none;
+    color: var(--color-almost-White);
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.item-menu:hover {
+    color: var(--color-yellow);
+}
+
+
+/* ============================================================
+   SEÇÃO 1 — PROBLEMA
+   ============================================================ */
+
+#sec-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-dark-gray);
+    color: var(--color-almost-White);
+    padding: 160px;
+    min-height: 90vh;
+}
+
+.div-txt {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+}
+
+.div-s1-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-sm);
+    border-radius: 0;
+    width: 80%;
+    max-width: 100%;
+    min-height: 100px;
+}
+
+.sec1-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3%;
+    display: block;
+    box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.9);
+    margin-left: 150px;
+}
+
+.h2-txt {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.txt-s1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   SEÇÃO 2 — TECNOLOGIA
+   ============================================================ */
+
+#sec-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-navy-Blue);
+    color: var(--color-almost-White);
+    padding: 30px 160px;
+    min-height: 80vh;
+}
+
+.sec2-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#sec-2 h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.sec2-parte1,
+.sec2-parte2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sec2-parte1 {
+    margin-right: 40px;
+}
+
+.sec2-parte2 {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.sec2-div-txt1,
+.sec2-div-txt2 {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: 20px 1px;
+}
+
+#sec-2 p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 100;
+    text-align: justify;
+    color: var(--color-almost-White);
+}
+
+.sec2-div-img1,
+.sec2-div-img2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-sm);
+    max-width: 90%;
+    width: 80%;
+}
+
+.sec2-img {
+    width: 340px;
+    height: auto;
+    border-radius: 4%;
+    display: block;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ============================================================
+   SEÇÃO 3 — OBJETIVOS
+   ============================================================ */
+
+#sec-3 {
+    background-image: url(../Imagens/satelite-fundo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    min-height: 90vh;
+}
+
+#h2-sec3 {
+    font-family: 'Nunito', sans-serif;
+    color: var(--color-almost-White);
+    font-size: 2.5rem;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8),
+                 0px 2px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.div-txt-s3 {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 8.8rem;
+    margin-left: 6.1rem;
+    max-width: 415px;
+    width: 415px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: 0.3s ease;
+}
+
+.div-txt-s3:hover {
+    transform: translateX(8px);
+    border-color: #ff7e33;
+}
+
+.sec3-txt {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-almost-White);
+    font-size: 1.6rem;
+    text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+
+
+/* ============================================================
+   SEÇÃO 4 — PÚBLICO-ALVO
+   ============================================================ */
+
+#sec-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-green);
+    color: var(--color-almost-White);
+    padding: 160px;
+    min-height: 90vh;
+    
+}
+
+.sec4-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.sec4-div-txt {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+}
+
+.sec4-div-txt h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.sec4-div-txt p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.sec4-div-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-sm);
+    width: 800px;
+ 
+    margin-left: 150px;
+}
+
+.sec4-img {
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+    display: block;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ============================================================
+   SEÇÃO 5 — BENEFÍCIOS
+   ============================================================ */
+
+#sec-5 {
+    min-height: 100vh;
+    background: #050505;
+    display: flex;
+    align-items: center;
+    padding: 120px 10%;
+}
+
+.beneficios-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+.beneficios-titulo {
+    flex: 1;
+}
+
+.beneficios-titulo h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: white;
+}
+
+.linha-beneficios {
+    width: 120px;
+    height: 4px;
+    background: #ff5c33;
+    margin-top: 30px;
+    border-radius: 999px;
+}
+
+.beneficios-grid {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.beneficio {
+    padding: 20px;
+}
+
+.beneficio-icon {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.beneficio h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.beneficio p {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   SEÇÃO 6 — APLICAÇÃO NO DIA A DIA
+   ============================================================ */
+
+
+#sec-6{
+    min-height:100vh;
+    padding:120px 10%;
+    text-align:center;
+    background-image: url(/conteúdo/imagens/fundo-sec6.avif);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+#sec-6 h2{
+    color:#fff;
+    font-size:3rem;
+    line-height:1.1;
+}
+
+.linha{
+    width:120px;
+    height:4px;
+    background:#ff5c33;
+    border-radius:999px;
+    margin:25px 0 40px;
+}
+
+#sec-6 > p{
+    max-width:700px;
+    color:rgba(255,255,255,.8);
+    margin-bottom:10px;
+}
+
+.cards{
+    display:flex;
+    gap:30px;
+    margin-top:60px;
+}
+
+.card{
+    width:300px;
+    padding:35px 25px;
+
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+}
+
+.icone{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:rgba(255,255,255,.75);
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+
+#rodape {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    background-color: var(--color-dark-gray);
+    color: var(--color-almost-White);
+    font-family: 'Raleway', sans-serif;
+    padding: 15px;
+}
+
+
+/* ============================================================
+   SEÇÃO TEMAS — TROCA DE COR
+   ============================================================ */
+
+#sec-temas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-navy-Blue);
+    color: var(--color-almost-White);
+    padding: 80px var(--spacing-lg);
+    min-height: 30vh;
+    gap: var(--spacing-lg);
+}
+
+#sec-temas h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.botoes-tema {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-tema {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    border: 2px solid var(--color-almost-White);
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-almost-White);
+    letter-spacing: 1px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-tema:hover {
+    background-color: var(--color-forest-green);
+    border-color: var(--color-forest-green);
+    color: var(--color-almost-White);
+}
+
+body.tema-escuro {
+    background-color: var(--color-dark-gray);
+    color: var(--color-almost-White);
+}
+
+body.tema-verde {
+    background-color: var(--color-dark-green);
+    color: var(--color-almost-White);
+}
+
+body.tema-claro {
+    background-color: var(--color-almost-White);
+    color: var(--color-dark-gray);
+}
+
+
+/* ============================================================
+   SEÇÃO SLIDESHOW — GALERIA
+   ============================================================ */
+
+#sec-slideshow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-gray);
+    color: var(--color-almost-White);
+    padding: 80px var(--spacing-lg);
+    min-height: 70vh;
+    gap: var(--spacing-lg);
+}
+
+#sec-slideshow h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.slide-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+#imagem-slide {
+    width: 650px;
+    max-width: 80vw;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+}
+
+.btn-slide {
+    font-size: 1.5rem;
+    padding: 12px 22px;
+    cursor: pointer;
+    background-color: var(--color-forest-green);
+    color: var(--color-almost-White);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.btn-slide:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-gray);
+}
+
+.legenda-slide {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #aaaaaa;
+    margin-top: var(--spacing-sm);
+    text-align: center;
+}
+
+
+/* ============================================================
+   SEÇÃO QUIZ
+   ============================================================ */
+
+#sec-quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-navy-Blue);
+    color: var(--color-almost-White);
+    padding: 80px var(--spacing-lg);
+    min-height: 70vh;
+}
+
+#sec-quiz h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-lg);
+}
+
+#pergunta-container {
+    max-width: 700px;
+    width: 100%;
+}
+
+#numero-pergunta {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-yellow);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 1px;
+}
+
+#texto-pergunta {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.4;
+}
+
+#opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.btn-opcao {
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border: 2px solid var(--color-almost-White);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--color-almost-White);
+    text-align: left;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-opcao:hover {
+    background-color: var(--color-forest-green);
+    border-color: var(--color-forest-green);
+    color: var(--color-almost-White);
+}
+
+#btn-proximo {
+    margin-top: var(--spacing-lg);
+    padding: 12px 32px;
+    background-color: var(--color-forest-green);
+    color: var(--color-almost-White);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+#btn-proximo:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-gray);
+}
+
+#resultado-quiz {
+    text-align: center;
+    padding: var(--spacing-lg);
+    max-width: 700px;
+    width: 100%;
+}
+
+#texto-resultado {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: var(--color-yellow);
+    margin-bottom: var(--spacing-lg);
+}
+
+#resultado-quiz button {
+    padding: 12px 32px;
+    background-color: var(--color-forest-green);
+    color: var(--color-almost-White);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+#resultado-quiz button:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-gray);
+}
+
+
+/* ============================================================
+   SEÇÃO CONTATO — FORMULÁRIO
+   ============================================================ */
+
+#sec-contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-gray);
+    color: var(--color-almost-White);
+    padding: 80px var(--spacing-lg);
+    min-height: 70vh;
+}
+
+#sec-contato h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-lg);
+}
+
+#form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 580px;
+}
+
+#form-contato input,
+#form-contato textarea {
+    padding: 14px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid var(--color-forest-green);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--color-almost-White);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#form-contato input:focus,
+#form-contato textarea:focus {
+    border-color: var(--color-yellow);
+}
+
+#form-contato input::placeholder,
+#form-contato textarea::placeholder {
+    color: #888888;
+}
+
+#form-contato textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+#form-contato button {
+    padding: 14px;
+    background-color: var(--color-forest-green);
+    color: var(--color-almost-White);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#form-contato button:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-gray);
+}
+
+.erro-form {
+    color: var(--color-red);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+
+/* ============================================================
+   CORREÇÕES DE TEMA — CLARO
+   ============================================================ */
+
+body.tema-claro .card h3,
+body.tema-claro .card p,
+body.tema-claro .icone,
+body.tema-claro .beneficio h3,
+body.tema-claro .beneficio p,
+body.tema-claro .beneficios-titulo h2,
+body.tema-claro #sec-6 h2,
+body.tema-claro .descricao {
+    color: var(--color-dark-gray);
+}
+
+body.tema-claro .card {
+    border-color: var(--color-dark-gray);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.tema-claro .beneficio {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.tema-claro #sec-5 {
+    background: #f5f5f0;
+}
+
+body.tema-claro .beneficios-titulo h2,
+body.tema-claro .beneficio h3,
+body.tema-claro .beneficio p {
+    color: var(--color-dark-gray);
+}
+
+body.tema-claro #sec-3 {
+    background-image: none;
+    background-color: #f5f5f0;
+}
+
+body.tema-claro #h2-sec3,
+body.tema-claro .sec3-txt {
+    color: var(--color-dark-gray);
+    text-shadow: none;
+}
+
+body.tema-claro .div-txt-s3 {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* ============================================================
+   CORREÇÕES DE TEMA — ESCURO
+   ============================================================ */
+
+body.tema-escuro #sec-5 {
+    background: #050505;
+}
+
+body.tema-escuro .beneficios-titulo h2,
+body.tema-escuro .beneficio h3,
+body.tema-escuro .beneficio p {
+    color: var(--color-almost-White);
+}
+
+
+/* ============================================================
+   CORREÇÕES DE TEMA — VERDE
+   ============================================================ */
+
+body.tema-verde #sec-5 {
+    background: var(--color-dark-green);
+}
+
+body.tema-verde .beneficios-titulo h2,
+body.tema-verde .beneficio h3,
+body.tema-verde .beneficio p {
+    color: var(--color-almost-White);
+}
+
+body.tema-verde #sec-3 {
+    background-image: none;
+    background-color: var(--color-dark-green);
+}
