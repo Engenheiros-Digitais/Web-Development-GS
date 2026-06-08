@@ -166,6 +166,25 @@ function mostrarPergunta() {
     document.getElementById('btn-proximo').style.display = 'none';
 }
 
+function verificarResposta(indice, botaoClicado, correta) {
+    // se já respondeu não deixa clicar de novo
+    if (respondeu) return;
+    respondeu = true;
+
+    // verde se acertou, vermelho se errou
+    if (indice === correta) {
+        botaoClicado.style.backgroundColor = '#265C00';
+        botaoClicado.style.color = '#FFFFFD';
+        pontuacao++;
+    } else {
+        botaoClicado.style.backgroundColor = '#E63946';
+        botaoClicado.style.color = '#FFFFFD';
+    }
+
+    // mostra o botão de próxima pergunta
+    document.getElementById('btn-proximo').style.display = 'block';
+}
+
 function proximaPergunta(){
     perguntaAtual++;
 
