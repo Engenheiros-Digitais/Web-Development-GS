@@ -126,6 +126,45 @@ let perguntaAtual = 0; // qual pergunta está aparecendo agora
 let pontuacao = 0;     // quantas o usuário acertou
 let respondeu = false; // evita clicar duas vezes na mesma pergunta
 
+function iniciarQuiz() {
+    perguntaAtual = 0;
+    pontuacao = 0;
+    respondeu = false;
+    document.getElementById('resultado-quiz').style.display = 'none';
+    document.getElementById('pergunta-container').style.display = 'block';
+    document.getElementById('btn-proximo').style.display = 'none';
+    mostrarPergunta();
+}
+
+// mostra a pergunta atual na tela e cria os botões de resposta
+function mostrarPergunta() {
+    respondeu = false;
+    const p = perguntas[perguntaAtual];
+
+    // atualiza o contador de perguntas ex: "Pergunta 1 de 10"
+    document.getElementById('numero-pergunta').textContent =
+        'Pergunta ' + (perguntaAtual + 1) + ' de ' + perguntas.length;
+
+    // atualiza o texto da pergunta
+    document.getElementById('texto-pergunta').textContent = p.pergunta;
+
+    // apaga os botões da pergunta anterior
+    const container = document.getElementById('opcoes-container');
+    container.innerHTML = '';
+
+    // cria um botão para cada opção de resposta
+    p.opcoes.forEach(function(opcao, index) {
+        const btn = document.createElement('button');
+        btn.textContent = opcao;
+        btn.className = 'btn-opcao';
+        btn.onclick = function() {
+            verificarResposta(index, btn, p.correta);
+        };
+        container.appendChild(btn);
+    });
+
+    document.getElementById('btn-proximo').style.display = 'none';
+}
 
 function proximaPergunta(){
     perguntaAtual++;
