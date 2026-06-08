@@ -63,6 +63,69 @@ document.getElementById('nome').value = '';
 document.getElementById('email').value = '';
 document.getElementById('mensagem').value = '';
 
+const perguntas = [
+    {
+        pergunta: 'Quantos hectares foram queimados na Amazônia em 2024?',
+        opcoes: ['5 milhões', '17 milhões', '30 milhões', '10 milhões'],
+        correta: 1
+    },
+    {
+        pergunta: 'Qual satélite fornece o índice de seca usado pelo FireWatch?',
+        opcoes: ['Hubble', 'Copernicus', 'James Webb', 'GPS'],
+        correta: 1
+    },
+    {
+        pergunta: 'O que significa a sigla LoRa?',
+        opcoes: ['Low Range', 'Long Range', 'Local Radio', 'Light Range'],
+        correta: 1
+    },
+    {
+        pergunta: 'Qual é a principal limitação dos satélites de monitoramento atuais?',
+        opcoes: ['Custo alto', 'Latência orbital', 'Falta de cobertura', 'Consumo de energia'],
+        correta: 1
+    },
+    {
+        pergunta: 'O que é Edge Computing?',
+        opcoes: [
+            'Computação na nuvem',
+            'Processamento local sem depender de internet',
+            'Rede de satélites',
+            'Sistema de GPS avançado'
+        ],
+        correta: 1
+    },
+    {
+        pergunta: 'Qual sensor mede temperatura e umidade na estação local do FireWatch?',
+        opcoes: ['TMP36', 'DHT22', 'LM35', 'DS18B20'],
+        correta: 1
+    },
+    {
+        pergunta: 'Qual tecnologia conecta regiões sem internet via satélite no FireWatch?',
+        opcoes: ['Wi-Fi', 'Bluetooth', 'Starlink', 'Zigbee'],
+        correta: 2
+    },
+    {
+        pergunta: 'Em quantos níveis o FireWatch classifica o risco de queimada?',
+        opcoes: ['2 níveis', '3 níveis', '4 níveis', '5 níveis'],
+        correta: 1
+    },
+    {
+        pergunta: 'Qual foi o prejuízo das queimadas para pequenos produtores em 2024?',
+        opcoes: ['R$ 500 milhões', 'R$ 1,1 bilhão', 'R$ 2 bilhões', 'R$ 800 milhões'],
+        correta: 1
+    },
+    {
+        pergunta: 'Qual porcentagem das áreas rurais amazônicas não tem internet móvel?',
+        opcoes: ['50%', '75%', '94%', '60%'],
+        correta: 2
+    }
+];
+
+// variáveis que controlam o estado do quiz
+let perguntaAtual = 0; // qual pergunta está aparecendo agora
+let pontuacao = 0;     // quantas o usuário acertou
+let respondeu = false; // evita clicar duas vezes na mesma pergunta
+
 
 function proximaPergunta(){
     perguntaAtual++;
