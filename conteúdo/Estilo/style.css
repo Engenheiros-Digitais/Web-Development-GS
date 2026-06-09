@@ -1,12 +1,4 @@
-/* ============================================================
-   FIREWATCH — style.css
-   Web Development — Global Solution 2026 — FIAP
-   ============================================================ */
-
-
-/* ============================================================
-   FONTES LOCAIS
-   ============================================================ */
+/* VARIÁVEIS CSS E FONTES LOCAIS */
 
 @font-face {
     font-family: Lato;
@@ -24,11 +16,6 @@
     font-weight: 300;
 }
 
-
-/* ============================================================
-   VARIÁVEIS CSS
-   ============================================================ */
-
 :root {
     --spacing-sm: 10px;
     --spacing-md: 20px;
@@ -36,17 +23,14 @@
     --color-almost-White: #FFFFFD;
     --color-yellow: #CCC23E;
     --color-fire: #ff5c33;
-    --color-navy-Blue: #10206E;
+    --color-navy-Blue: #00021d;
     --color-forest-green: #265C00;
     --color-dark-green: #020E02;
-    --color-dark-gray: #010102;
+    --color-dark-gray: #1b1b1d;
     --color-red: #E63946;
 }
 
-
-/* ============================================================
-   RESET CSS
-   ============================================================ */
+/* RESET CSS */
 
 * {
     margin: 0;
@@ -55,10 +39,7 @@
     scroll-behavior: smooth;
 }
 
-
-/* ============================================================
-   HEADER
-   ============================================================ */
+/* HEADER */
 
 .logofiap {
     position: absolute;
@@ -68,10 +49,7 @@
 }
 
 .header-Sec {
-    background-image: url(../Imagens/Satelite-inicio-2.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url(/imagens/Satelite-inicio-2.jpg) center/cover no-repeat;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -139,11 +117,137 @@ h1 {
     color: var(--color-yellow);
 }
 
+/* SEÇÃO TEMAS — TROCA DE COR */
+    
+#sec-temas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-navy-Blue);
+    color: var(--color-almost-White);
+    padding: 80px var(--spacing-lg);
+    min-height: 30vh;
+    gap: var(--spacing-lg);
+}
+    
+#sec-temas h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+    
+.botoes-tema {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+    
+.btn-tema {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    border: 2px solid var(--color-almost-White);
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-almost-White);
+    letter-spacing: 1px;
+    transition: background-color 0.2s, color 0.2s;
+}
+    
+.btn-tema:hover {
+    background-color: var(--color-forest-green);
+    border-color: var(--color-forest-green);
+    color: var(--color-almost-White);
+}
+    
+/* TEMAS — ESCURO (padrão) */
+    
+body.tema-escuro {
+    background-color: var(--color-dark-gray);
+    color: var(--color-almost-White);
+}
+    
+body.tema-escuro #sec-1  { background-color: var(--color-dark-gray); color: var(--color-almost-White); }
+body.tema-escuro #sec-5  { background: #050505; }
+body.tema-escuro .beneficios-titulo h2,
+body.tema-escuro .beneficio h3,
+body.tema-escuro .beneficio p    { color: var(--color-almost-White); }
+body.tema-escuro .card h3,
+body.tema-escuro .card p         { color: var(--color-almost-White); }
+    
+/* TEMAS — VERDE */
+    
+body.tema-verde {
+    background-color: var(--color-dark-green);
+    color: var(--color-almost-White);
+}
+    
+body.tema-verde #sec-1  { background-color: var(--color-dark-green); color: var(--color-almost-White); }
+body.tema-verde #sec-5  { background: var(--color-dark-green); }
+body.tema-verde .beneficios-titulo h2,
+body.tema-verde .beneficio h3,
+body.tema-verde .beneficio p     { color: var(--color-almost-White); }
+body.tema-verde .card h3,
+body.tema-verde .card p          { color: var(--color-almost-White); }
+body.tema-verde #sec-3  {
+    background-color: var(--color-dark-green);
+}
 
-/* ============================================================
-   SEÇÃO 1 — PROBLEMA
-   ============================================================ */
-
+body.tema-verde #h2-sec3,
+body.tema-verde .sec3-txt        { color: var(--color-almost-White); text-shadow: none; }
+body.tema-verde .div-txt-s3      { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.15); }
+body.tema-verde #sec-contato, 
+body.tema-verde #sec-slideshow   { background-color: var(--color-dark-green); }
+    
+/* TEMAS — CLARO */
+    
+body.tema-claro {
+    background-color: var(--color-almost-White);
+    color: var(--color-dark-gray);
+}
+    
+body.tema-claro #sec-1  { background-color: #f0f0ee; color: var(--color-dark-gray); }
+body.tema-claro .h2-txt,
+body.tema-claro .txt-s1          { color: var(--color-dark-gray); }
+    
+body.tema-claro #sec-5  { background: #f5f5f0; }
+body.tema-claro .beneficios-titulo h2,
+body.tema-claro .beneficio h3,
+body.tema-claro .beneficio p     { color: var(--color-dark-gray); }
+body.tema-claro .beneficio       { background-color: rgba(0, 0, 0, 0.05); }
+    
+body.tema-claro .card            { border-color: rgba(0,0,0,0.2); background-color: rgba(0,0,0,0.05); }
+body.tema-claro .card h3,
+body.tema-claro .card p,
+body.tema-claro .icone           { color: var(--color-dark-gray); }
+body.tema-claro #sec-6 h2, body.tema-claro #sec-6 p,  body.tema-claro #sec-6 h3    { color: var(--color-almost-White); }
+    
+body.tema-claro #sec-3  {
+    background-color: #f5f5f0;
+}
+body.tema-claro #h2-sec3,
+body.tema-claro .sec3-txt        { color: var(--color-almost-White); text-shadow: none; }
+body.tema-claro .div-txt-s3      { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.2); }
+    
+body.tema-claro #sec-contato     { background-color: #f0f0ee; }
+body.tema-claro #sec-contato h2    { color: var(--color-dark-gray); }
+body.tema-claro #form-contato input,
+body.tema-claro #form-contato textarea {
+    color: var(--color-dark-gray);
+    border-color: var(--color-forest-green);
+}
+body.tema-claro #form-contato input::placeholder,
+body.tema-claro #form-contato textarea::placeholder { color: #555; }
+    
+body.tema-claro #sec-slideshow   { background-color: #f0f0ee; color: var(--color-dark-gray); }
+body.tema-claro .legenda-slide   { color: #555; }
+    
+body.tema-claro #rodape          { background-color: #e8e8e6; color: var(--color-dark-gray); }
+/* SEÇÃO 1 — PROBLEMA */
 #sec-1 {
     display: flex;
     flex-direction: row;
@@ -170,7 +274,6 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: var(--spacing-sm);
-    border-radius: 0;
     width: 80%;
     max-width: 100%;
     min-height: 100px;
@@ -198,12 +301,7 @@ h1 {
     text-align: left;
     font-size: 16px;
 }
-
-
-/* ============================================================
-   SEÇÃO 2 — TECNOLOGIA
-   ============================================================ */
-
+/* SEÇÃO 2 — TECNOLOGIA */
 #sec-2 {
     display: flex;
     flex-direction: column;
@@ -232,8 +330,7 @@ h1 {
     width: 100%;
 }
 
-.sec2-parte1,
-.sec2-parte2 {
+.sec2-parte1, .sec2-parte2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -241,17 +338,10 @@ h1 {
     width: 100%;
 }
 
-.sec2-parte1 {
-    margin-right: 40px;
-}
+.sec2-parte1 { margin-right: 40px; }
+.sec2-parte2 { margin-top: 40px; margin-left: 40px; }
 
-.sec2-parte2 {
-    margin-top: 40px;
-    margin-left: 40px;
-}
-
-.sec2-div-txt1,
-.sec2-div-txt2 {
+.sec2-div-txt1, .sec2-div-txt2 {
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -268,8 +358,7 @@ h1 {
     color: var(--color-almost-White);
 }
 
-.sec2-div-img1,
-.sec2-div-img2 {
+.sec2-div-img1, .sec2-div-img2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -285,17 +374,9 @@ h1 {
     display: block;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
 }
-
-
-/* ============================================================
-   SEÇÃO 3 — OBJETIVOS
-   ============================================================ */
-
+/* SEÇÃO 3 — OBJETIVOS */
 #sec-3 {
-    background-image: url(../Imagens/satelite-fundo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url(/imagens/satelite-fundo.png) center/cover no-repeat;
     height: 100vh;
     min-height: 90vh;
 }
@@ -313,8 +394,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    margin-top: 8.8rem;
-    margin-left: 6.1rem;
+    margin: 8.8rem 0 0 6.1rem;
     max-width: 415px;
     width: 415px;
     padding: 5px 10px;
@@ -336,12 +416,7 @@ h1 {
     text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7);
     text-align: left;
 }
-
-
-/* ============================================================
-   SEÇÃO 4 — PÚBLICO-ALVO
-   ============================================================ */
-
+/* SEÇÃO 4 — PÚBLICO-ALVO */
 #sec-4 {
     display: flex;
     justify-content: center;
@@ -350,7 +425,6 @@ h1 {
     color: var(--color-almost-White);
     padding: 160px;
     min-height: 90vh;
-    
 }
 
 .sec4-container {
@@ -393,7 +467,6 @@ h1 {
     align-items: center;
     padding: var(--spacing-sm);
     width: 800px;
- 
     margin-left: 150px;
 }
 
@@ -404,15 +477,10 @@ h1 {
     display: block;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
 }
-
-
-/* ============================================================
-   SEÇÃO 5 — BENEFÍCIOS
-   ============================================================ */
-
-#sec-5 {
+/* SEÇÃO 5 — BENEFÍCIOS */
+#sec-5{
     min-height: 100vh;
-    background: #050505;
+    background: var(--color-dark-gray);
     display: flex;
     align-items: center;
     padding: 120px 10%;
@@ -440,7 +508,7 @@ h1 {
 .linha-beneficios {
     width: 120px;
     height: 4px;
-    background: #ff5c33;
+    background: var(--color-fire);
     margin-top: 30px;
     border-radius: 999px;
 }
@@ -472,158 +540,66 @@ h1 {
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.7;
 }
-
-
-/* ============================================================
-   SEÇÃO 6 — APLICAÇÃO NO DIA A DIA
-   ============================================================ */
-
-
-#sec-6{
-    min-height:100vh;
-    padding:120px 10%;
-    text-align:center;
-    background-image: url(/conteúdo/imagens/fundo-sec6.avif);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-#sec-6 h2{
-    color:#fff;
-    font-size:3rem;
-    line-height:1.1;
-}
-
-.linha{
-    width:120px;
-    height:4px;
-    background:#ff5c33;
-    border-radius:999px;
-    margin:25px 0 40px;
-}
-
-#sec-6 > p{
-    max-width:700px;
-    color:rgba(255,255,255,.8);
-    margin-bottom:10px;
-}
-
-.cards{
-    display:flex;
-    gap:30px;
-    margin-top:60px;
-}
-
-.card{
-    width:300px;
-    padding:35px 25px;
-
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:20px;
-}
-
-.icone{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-.card h3{
-    color:#fff;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:rgba(255,255,255,.75);
-}
-
-/* ============================================================
-   RODAPÉ
-   ============================================================ */
-
-#rodape {
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    background-color: var(--color-dark-gray);
-    color: var(--color-almost-White);
-    font-family: 'Raleway', sans-serif;
-    padding: 15px;
-}
-
-
-/* ============================================================
-   SEÇÃO TEMAS — TROCA DE COR
-   ============================================================ */
-
-#sec-temas {
+/* SEÇÃO 6 — APLICAÇÃO NO DIA A DIA */
+#sec-6 {
+    min-height: 100vh;
+    padding: 120px 10%;
+    text-align: center;
+    background: url(/imagens/fundo-sec6.avif) center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-navy-Blue);
-    color: var(--color-almost-White);
-    padding: 80px var(--spacing-lg);
-    min-height: 30vh;
-    gap: var(--spacing-lg);
 }
 
-#sec-temas h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 2px;
+#sec-6 h2 {
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1.1;
 }
 
-.botoes-tema {
+.linha {
+    width: 120px;
+    height: 4px;
+    background: var(--color-fire);
+    border-radius: 999px;
+    margin: 25px 0 40px;
+}
+
+#sec-6 > p {
+    max-width: 700px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.cards {
     display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 60px;
 }
 
-.btn-tema {
-    padding: 12px 28px;
-    font-size: 1rem;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    border: 2px solid var(--color-almost-White);
-    border-radius: 6px;
-    cursor: pointer;
-    background-color: transparent;
-    color: var(--color-almost-White);
-    letter-spacing: 1px;
-    transition: background-color 0.2s, color 0.2s;
+.card {
+    width: 300px;
+    padding: 35px 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
 }
 
-.btn-tema:hover {
-    background-color: var(--color-forest-green);
-    border-color: var(--color-forest-green);
-    color: var(--color-almost-White);
+.icone {
+    font-size: 3rem;
+    margin-bottom: 15px;
 }
 
-body.tema-escuro {
-    background-color: var(--color-dark-gray);
-    color: var(--color-almost-White);
+.card h3 {
+    color: #fff;
+    margin-bottom: 10px;
 }
 
-body.tema-verde {
-    background-color: var(--color-dark-green);
-    color: var(--color-almost-White);
+.card p {
+    color: rgba(255, 255, 255, 0.75);
 }
-
-body.tema-claro {
-    background-color: var(--color-almost-White);
-    color: var(--color-dark-gray);
-}
-
-
-/* ============================================================
-   SEÇÃO SLIDESHOW — GALERIA
-   ============================================================ */
-
+/* SEÇÃO SLIDESHOW — GALERIA */
 #sec-slideshow {
     display: flex;
     flex-direction: column;
@@ -683,12 +659,7 @@ body.tema-claro {
     margin-top: var(--spacing-sm);
     text-align: center;
 }
-
-
-/* ============================================================
-   SEÇÃO QUIZ
-   ============================================================ */
-
+/* SEÇÃO QUIZ  */
 #sec-quiz {
     display: flex;
     flex-direction: column;
@@ -747,10 +718,14 @@ body.tema-claro {
     transition: background-color 0.2s, color 0.2s;
 }
 
-.btn-opcao:hover {
+.btn-opcao:hover:not(:disabled) {
     background-color: var(--color-forest-green);
     border-color: var(--color-forest-green);
     color: var(--color-almost-White);
+}
+
+.btn-opcao:disabled {
+    cursor: default;
 }
 
 #btn-proximo {
@@ -805,18 +780,13 @@ body.tema-claro {
     background-color: var(--color-yellow);
     color: var(--color-dark-gray);
 }
-
-
-/* ============================================================
-   SEÇÃO CONTATO — FORMULÁRIO
-   ============================================================ */
-
+/* SEÇÃO CONTATO — FORMULÁRIO */
 #sec-contato {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-dark-gray);
+    background-color:  var(--color-dark-green);
     color: var(--color-almost-White);
     padding: 80px var(--spacing-lg);
     min-height: 70vh;
@@ -837,15 +807,14 @@ body.tema-claro {
     max-width: 580px;
 }
 
-#form-contato input,
-#form-contato textarea {
+#form-contato input, #form-contato textarea {
     padding: 14px;
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     border: 2px solid var(--color-forest-green);
     border-radius: 6px;
     background-color: transparent;
-    color: var(--color-almost-White);
+    color: var(--almost-White); 
     outline: none;
     transition: border-color 0.2s;
 }
@@ -890,89 +859,13 @@ body.tema-claro {
     font-weight: 600;
     font-size: 0.95rem;
 }
-
-
-/* ============================================================
-   CORREÇÕES DE TEMA — CLARO
-   ============================================================ */
-
-body.tema-claro .card h3,
-body.tema-claro .card p,
-body.tema-claro .icone,
-body.tema-claro .beneficio h3,
-body.tema-claro .beneficio p,
-body.tema-claro .beneficios-titulo h2,
-body.tema-claro #sec-6 h2,
-body.tema-claro .descricao {
-    color: var(--color-dark-gray);
-}
-
-body.tema-claro .card {
-    border-color: var(--color-dark-gray);
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-body.tema-claro .beneficio {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-body.tema-claro #sec-5 {
-    background: #f5f5f0;
-}
-
-body.tema-claro .beneficios-titulo h2,
-body.tema-claro .beneficio h3,
-body.tema-claro .beneficio p {
-    color: var(--color-dark-gray);
-}
-
-body.tema-claro #sec-3 {
-    background-image: none;
-    background-color: #f5f5f0;
-}
-
-body.tema-claro #h2-sec3,
-body.tema-claro .sec3-txt {
-    color: var(--color-dark-gray);
-    text-shadow: none;
-}
-
-body.tema-claro .div-txt-s3 {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.2);
-}
-
-
-/* ============================================================
-   CORREÇÕES DE TEMA — ESCURO
-   ============================================================ */
-
-body.tema-escuro #sec-5 {
-    background: #050505;
-}
-
-body.tema-escuro .beneficios-titulo h2,
-body.tema-escuro .beneficio h3,
-body.tema-escuro .beneficio p {
+/* RODAPÉ */
+#rodape {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    background-color: black;
     color: var(--color-almost-White);
-}
-
-
-/* ============================================================
-   CORREÇÕES DE TEMA — VERDE
-   ============================================================ */
-
-body.tema-verde #sec-5 {
-    background: var(--color-dark-green);
-}
-
-body.tema-verde .beneficios-titulo h2,
-body.tema-verde .beneficio h3,
-body.tema-verde .beneficio p {
-    color: var(--color-almost-White);
-}
-
-body.tema-verde #sec-3 {
-    background-image: none;
-    background-color: var(--color-dark-green);
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
 }

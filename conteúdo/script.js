@@ -1,68 +1,82 @@
-// ============================================================
-// FIREWATCH — script.js
-// Web Development — Global Solution 2026 — FIAP
-// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
 
-// essa função troca a cor de fundo da página
-// primeiro remove qualquer tema que já estava ativo
-// depois coloca o novo tema que o usuário escolheu
+    // inicia o slideshow com a legenda da primeira imagem
+    document.getElementById('legenda-slide').textContent = imagens[0].legenda;
+
+    // inicia o quiz assim que a página carrega
+    iniciarQuiz();
+
+});
+
+// TROCA DE TEMA
+// Remove qualquer tema ativo e aplica o novo
+// As seções usam variáveis CSS que respondem ao tema do body
+
 function trocarTema(tema) {
     document.body.classList.remove('tema-escuro', 'tema-verde', 'tema-claro');
     document.body.classList.add('tema-' + tema);
 }
 
+// SLIDESHOW
+
 // array com as 3 imagens e o texto que aparece embaixo de cada uma
 const imagens = [
-    { src: 'Imagens/slide1.jpg', legenda: 'Monitoramento de queimadas via satélite' },
-    { src: 'Imagens/slide2.jpg', legenda: 'Estação IoT de campo com sensor DHT22' },
-    { src: 'Imagens/slide3.jpg', legenda: 'Alerta emitido para comunidades rurais' }
+    { src: '/imagens/Monitoramento-Satelite.png', legenda: 'Monitoramento de queimadas via satélite' },
+    { src: '/imagens/Estacao-IoT.png', legenda: 'Estação IoT de campo com sensor DHT22' },
+    { src: '/imagens/Alerta.jpeg', legenda: 'Alerta emitido para comunidades rurais' }
 ];
 
-// guarda qual imagem está aparecendo agora
+// guarda qual imagem está aparecendo 
 let indiceAtual = 0;
 
-// essa função muda a imagem quando o usuário clica nas setas
+// muda a imagem quando o usuário clica nas setas
+// direcao é 1 para avançar e -1 para voltar
 function mudarSlide(direcao) {
-    indiceAtual += direcao;
+    indiceAtual = (indiceAtual + direcao + imagens.length) % imagens.length;
 
-    if (indiceAtual >= imagens.length) {
-        indiceAtual = 0;
-    }
-
-    if (indiceAtual < 0) {
-        indiceAtual = imagens.length - 1;
-    }
-
+    // atualiza a imagem e a legenda
     document.getElementById('imagem-slide').src = imagens[indiceAtual].src;
     document.getElementById('legenda-slide').textContent = imagens[indiceAtual].legenda;
 }
 
-// coloca a legenda da primeira imagem quando a página abre
-document.getElementById('legenda-slide').textContent = imagens[0].legenda;
+// VALIDAÇÃO DO FORMULÁRIO
 
-//função para verificar se o usuario preencheu todos os  dados//
+// validar se o e-mail tem formato correto
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function validarFormulario() {
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
-const erro = document.getElementById('erro-form');
+    const erro = document.getElementById('erro-form');
+
+    // verifica se algum campo está vazio
+    if (nome === '' || email === '' || mensagem === '') {
+        erro.textContent = 'Preencha todos os campos antes de enviar.';
+        erro.style.display = 'block';
+        return;
+    }
+
+    // verifica se o e-mail tem formato válido
+    if (!regexEmail.test(email)) {
+        erro.textContent = 'Digite um e-mail válido (ex: nome@email.com).';
+        erro.style.display = 'block';
+        return;
+    }
+
+    // tudo certo: esconde o erro, avisa o usuário e limpa os campos
+    erro.style.display = 'none';
+    alert('Mensagem enviada com sucesso! Obrigado pelo contato.');
+
+    document.getElementById('nome').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('mensagem').value = '';
 }
 
-//Validação e mensagem de erro//
-if (nome === "" || email === "" || mensagem === "") {
-    erro.style.display = 'block';
-    return;
-}
+// QUIZ
 
-//se tudo estiver preenchido//
-erro.style.display = 'none';
-alert("Mensagem enviada com sucesso! Obrigado pelo contato.");
-
-//Limpa os campos depois do envio//
-document.getElementById('nome').value = '';
-document.getElementById('email').value = '';
-document.getElementById('mensagem').value = '';
-
+// lista com as 10 perguntas, as opções de resposta e qual é a certa
+// o número em "correta" é o índice (começa do 0) da resposta correta
 const perguntas = [
     {
         pergunta: 'Quantos hectares foram queimados na Amazônia em 2024?',
@@ -126,6 +140,7 @@ let perguntaAtual = 0; // qual pergunta está aparecendo agora
 let pontuacao = 0;     // quantas o usuário acertou
 let respondeu = false; // evita clicar duas vezes na mesma pergunta
 
+// reinicia tudo e começa o quiz do zero
 function iniciarQuiz() {
     perguntaAtual = 0;
     pontuacao = 0;
@@ -141,23 +156,23 @@ function mostrarPergunta() {
     respondeu = false;
     const p = perguntas[perguntaAtual];
 
-    // atualiza o contador de perguntas ex: "Pergunta 1 de 10"
+    // atualiza o contador de perguntas 
     document.getElementById('numero-pergunta').textContent =
         'Pergunta ' + (perguntaAtual + 1) + ' de ' + perguntas.length;
 
     // atualiza o texto da pergunta
     document.getElementById('texto-pergunta').textContent = p.pergunta;
 
-    // apaga os botões da pergunta anterior
+    // troca de botões
     const container = document.getElementById('opcoes-container');
     container.innerHTML = '';
 
-    // cria um botão para cada opção de resposta
-    p.opcoes.forEach(function(opcao, index) {
+    p.opcoes.forEach(function (opcao, index) {
         const btn = document.createElement('button');
         btn.textContent = opcao;
         btn.className = 'btn-opcao';
-        btn.onclick = function() {
+        btn.setAttribute('aria-label', 'Opção: ' + opcao);
+        btn.onclick = function () {
             verificarResposta(index, btn, p.correta);
         };
         container.appendChild(btn);
@@ -166,63 +181,62 @@ function mostrarPergunta() {
     document.getElementById('btn-proximo').style.display = 'none';
 }
 
+// verificação da resposta
 function verificarResposta(indice, botaoClicado, correta) {
-    // se já respondeu não deixa clicar de novo
     if (respondeu) return;
     respondeu = true;
 
-    // verde se acertou, vermelho se errou
+    // pega todos os botões de opção para poder marcar o correto
+    const botoes = document.querySelectorAll('.btn-opcao');
+
     if (indice === correta) {
+        // acertou: verde no botão clicado
         botaoClicado.style.backgroundColor = '#265C00';
         botaoClicado.style.color = '#FFFFFD';
+        botaoClicado.style.borderColor = '#265C00';
         pontuacao++;
     } else {
+        // errou: vermelho no clicado + verde na resposta certa
         botaoClicado.style.backgroundColor = '#E63946';
         botaoClicado.style.color = '#FFFFFD';
+        botaoClicado.style.borderColor = '#E63946';
+
+        // marca o botão correto de verde para o usuário aprender
+        botoes[correta].style.backgroundColor = '#265C00';
+        botoes[correta].style.color = '#FFFFFD';
+        botoes[correta].style.borderColor = '#265C00';
     }
 
-    // mostra o botão de próxima pergunta
+    // desabilita todos os botões para não deixar clicar de novo
+    botoes.forEach(function (btn) {
+        btn.disabled = true;
+        btn.style.cursor = 'default';
+    });
+
     document.getElementById('btn-proximo').style.display = 'block';
 }
 
-function proximaPergunta(){
+// Próxima pergunta
+function proximaPergunta() {
     perguntaAtual++;
 
-    if (perguntaAtual >= perguntas.lenght) {
+    if (perguntaAtual >= perguntas.length) {
         mostrarResultado();
-
     } else {
         mostrarPergunta();
     }
-
-
 }
 
-function mostrarResultado(){
+// Mostrar Resultado
+function mostrarResultado() {
     document.getElementById('pergunta-container').style.display = 'none';
     document.getElementById('btn-proximo').style.display = 'none';
     document.getElementById('resultado-quiz').style.display = 'block';
-    document.getElementById('texto-resultado').textContent = 'Você acertou' + pontuacao + 'de' + perguntas.lenght + 'perguntas!';
-
+    document.getElementById('texto-resultado').textContent =
+        'Você acertou ' + pontuacao + ' de ' + perguntas.length + ' perguntas!';
 }
 
-function reiniciarQuiz(){
+// Reiniciar Quiz
+function reiniciarQuiz() {
     iniciarQuiz();
-
-
 }
-
-iniciarQuiz();
-
-
-
-
-
-
-
-
-
-
-
-
-
